@@ -1,6 +1,6 @@
 ## What is this?
 
-This is an AWS Lambda@Edge function to enable static website hosting such as AWS S3 via CloudFront with beautiful page URLs without .html suffixes without requiring other hacks.
+This is an AWS Lambda@Edge function to enable static website hosting on AWS S3 via CloudFront with beautiful page URLs without .html suffixes without requiring other hacks.
 
 
 ## What scenarios are supported?
