@@ -1,6 +1,6 @@
 ## What is this?
 
-This is an AWS Lambda@Edge function to enable static website hosting on AWS S3 via CloudFront with beautiful page URLs without .html suffixes without requiring other hacks.
+This is an **AWS Lambda@Edge** function to enable **static website hosting on AWS S3 via CloudFront** with beautiful page URLs without .html suffixes and without requiring other hacks.
 
 
 ## What scenarios are supported?
@@ -51,8 +51,8 @@ If the object is already cached by the CloudFront edge this function will not be
 
 ## Setup (in short)
 
-- Create a new Lambda function in the region us-east-1 (North Virginia).
-- Adjust the function code [lambdaRewrite.js](./lambdaRewrite.js) and/or its config options as required and upload it to your Lambda function.
+- Create a new Lambda function in the region us-east-1 (North Virginia) and a *Node.js 6.10* environment.
+- Adjust the function code [lambdaRewrite.js](./lambdaRewrite.js) and/or its config options as required and upload (or copy-paste) it to your Lambda function.
 - Publish the Lambda function as a new version.
 - Add trigger "CloudFront", associate with the CloudFront distribution and the distribution's cache behaviour of your choice (e.g. "*") and select "Origin Request" as CloudFront event.
 
