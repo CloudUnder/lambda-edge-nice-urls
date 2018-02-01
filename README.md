@@ -4,19 +4,19 @@ This is an AWS Lambda@Edge function to enable static website hosting such as AWS
 
 ## How does it work?
 
-Upload your HTML pages as usual with ".html" suffixes to S3 and access them or link to them without the suffix via CloudFront.
+Upload your HTML pages as usual with `.html` suffixes to S3 and access them or link to them without the suffix via CloudFront.
 
-Whenever CloudFront needs to request an object from the origin (e.g. S3 bucket), this Lambda function will dynamically add the suffix ".html" if the request is a GET request and the URI doesn't have any dot-suffix at all.
+Whenever CloudFront needs to request an object from the origin (e.g. S3 bucket), this Lambda function will dynamically add the suffix `.html` if the request is a *GET* request and the URI doesn't have any dot-suffix at all.
 
 If the object is already cached by the CloudFront edge this function will not be triggered.
 
 ## Rewrite examples
 
-- Request URI "/some/page" will request "/some/page.html" from the origin.
-- Request URI "/some" will request "/some.html" from the origin.
-- Request URI "/" will request "/" from the origin, unless you have a "Default Root Object" defined in your CloudFront distribution settings.
-- Request URI "/some/image.jpg" will request "/some/image.jpg" from the origin.
-- Request URI "/robots.txt" will request "/robots.txt" from the origin.
+- Request URI `/some/page` will request `/some/page.html` from the origin.
+- Request URI `/some` will request `/some.html` from the origin.
+- Request URI `/` will request `/` from the origin, unless you have a *Default Root Object* defined in your CloudFront distribution settings.
+- Request URI `/some/image.jpg` will request `/some/image.jpg` from the origin.
+- Request URI `/robots.txt` will request `/robots.txt` from the origin.
 
 ## Setup (in short)
 
